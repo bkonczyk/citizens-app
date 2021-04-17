@@ -10,23 +10,24 @@ import javax.annotation.PostConstruct;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
 class PersonReader {
 
+    private static final String PERSON_CSV_FILE = "person.csv";
+
+    private final PersonService service;
     private final PersonMapper mapper;
 
     @PostConstruct
-    List<PersonCsvEntry> process() {
-        File personFile = new File(getClass().getClassLoader().getResource("person.csv").getFile());
+    void process() {
+        File personFile = new File(getClass().getClassLoader().getResource(PERSON_CSV_FILE).getFile());
         List<PersonCsvEntry> csvEntries = this.readFromFile(personFile);
-        List<Person> collect = csvEntries.stream()
+        csvEntries.stream()
             .map(mapper::csvToPerson)
-            .collect(Collectors.toList());
-        return csvEntries;
+            .forEach(service::addPerson);
     }
 
     private List<PersonCsvEntry> readFromFile(File fileName) {

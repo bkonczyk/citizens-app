@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Getter
 class PersonCsvEntry {
-    private Long id;
+//    private Long id;
     private String name;
     private String lastName;
     private String sex;
@@ -15,7 +15,7 @@ class PersonCsvEntry {
 
 
     public PersonCsvEntry(CsvLine line) {
-        id = Long.parseLong(line.getElementAt(0));
+//        id = Long.parseLong(line.getElementAt(0));
         name = line.getElementAt(1);
         lastName = line.getElementAt(2);
         sex = line.getElementAt(3);
