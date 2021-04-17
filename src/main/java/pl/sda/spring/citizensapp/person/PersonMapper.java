@@ -20,4 +20,8 @@ public class PersonMapper {
             .setBirthDate(request.getBirthDate())
             .setSex(request.getSex());
     }
+
+    PersonListView toPersonListView(Person person) {
+        return PersonListView.of(person.getName(), person.getBirthDate());
+    }
 }
