@@ -1,10 +1,10 @@
-package pl.sda.spring.citizensapp.person;
+package pl.sda.spring.citizensapp.csv;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class CsvLine implements Iterable<String> {
+public class CsvLine implements Iterable<String> {
 
     private final List<String> elements;
 
@@ -16,7 +16,7 @@ class CsvLine implements Iterable<String> {
         elements.add(value);
     }
 
-    String getElementAt(int position) {
+    public String getElementAt(int position) {
         if (position < elements.size()) {
             return elements.get(position);
         }

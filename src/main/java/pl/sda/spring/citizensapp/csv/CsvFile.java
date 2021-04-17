@@ -1,4 +1,4 @@
-package pl.sda.spring.citizensapp.person;
+package pl.sda.spring.citizensapp.csv;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class CsvFile implements Iterable<CsvLine> {
+public class CsvFile implements Iterable<CsvLine> {
 
     private final List<CsvLine> lines;
 
@@ -20,7 +20,7 @@ class CsvFile implements Iterable<CsvLine> {
         lines.add(line);
     }
 
-    static CsvFile fromFile(File inputLocation) {
+    public static CsvFile fromFile(File inputLocation) {
         CsvFile convertedFile = new CsvFile();
         try (FileReader inputStream = new FileReader(inputLocation)) {
             BufferedReader bufferedReader = new BufferedReader(inputStream);

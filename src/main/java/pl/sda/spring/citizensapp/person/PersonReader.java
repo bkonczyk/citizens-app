@@ -2,6 +2,8 @@ package pl.sda.spring.citizensapp.person;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
+import pl.sda.spring.citizensapp.csv.CsvFile;
+import pl.sda.spring.citizensapp.csv.CsvLine;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
