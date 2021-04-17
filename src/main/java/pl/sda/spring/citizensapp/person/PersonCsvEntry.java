@@ -1,9 +1,11 @@
 package pl.sda.spring.citizensapp.person;
 
+import lombok.Getter;
 import pl.sda.spring.citizensapp.csv.CsvLine;
 
 import java.time.LocalDate;
 
+@Getter
 class PersonCsvEntry {
     private Long id;
     private String name;
