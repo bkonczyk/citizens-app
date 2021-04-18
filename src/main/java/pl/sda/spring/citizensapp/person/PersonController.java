@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,7 +17,7 @@ public class PersonController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void addPerson(@RequestBody CreatePersonRequest request) {
+    public void addPerson(@Valid @RequestBody CreatePersonRequest request) {
         service.addPerson(request);
     }
 
